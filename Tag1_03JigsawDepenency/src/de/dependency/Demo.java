@@ -1,12 +1,16 @@
 package de.dependency;
 
-import de.dependency.impl.DemoImpl;
+import java.util.ServiceLoader;
 
 public interface Demo {
 
+	String getName();
 	void foo();
-	static Demo create() {
-		return new DemoImpl();
+	static Demo create(final String variante) {
+		return ServiceLoader.load(Demo.class)
+				.stream()
+				.filter(p->p.get().getName().equals(variante))
+				.findFirst().get().get();
 	}
 
 }

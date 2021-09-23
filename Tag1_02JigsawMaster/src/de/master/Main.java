@@ -6,7 +6,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Demo demo = Demo.create();
+		
+		Demo demo = Demo.create("alternativ");
+		
 		demo.foo();
 	}
 
