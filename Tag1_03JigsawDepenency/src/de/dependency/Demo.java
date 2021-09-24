@@ -14,3 +14,26 @@ public interface Demo {
 	}
 
 }
+
+interface MyList<T> {
+	void add(T t);
+	T get();
+	boolean remove();
+	
+	
+	default boolean moveFirst() {
+		if(isEmpty()) return false;
+		while(movePrev());
+		return true;
+	}
+	boolean movePrev();
+	boolean moveLast();
+	boolean moveNext();
+	
+	boolean isBOL();
+	boolean isEOL();
+	boolean isEmpty();
+	
+
+
+}
