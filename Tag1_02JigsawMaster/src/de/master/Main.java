@@ -10,6 +10,9 @@ public class Main {
 		Transformer t = Transformer.create(Transformer.UPPER);
 		
 		Demo demo = Demo.create("echte");
+		Demo d2 = Demo.create("echte");
+		
+		System.out.println(demo == d2);
 		
 		demo.foo();
 		
